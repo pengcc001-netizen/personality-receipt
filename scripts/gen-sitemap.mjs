@@ -36,7 +36,11 @@ add('/terms', 0.3)
 add('/contact', 0.5)
 add('/disclaimer', 0.3)
 
-for (const slug of typeSlugs) add(`/types/${slug}`, 0.8)
+for (const slug of typeSlugs) {
+  add(`/types/${slug}`, 0.8)
+  add(`/types/${slug}/careers`, 0.7)
+  add(`/types/${slug}/relationships`, 0.7)
+}
 for (const slug of blogSlugs) add(`/blog/${slug}`, 0.7)
 for (const pair of comparePairs) add(`/compare/${pair}`, 0.6)
 for (const slug of careerSlugs) add(`/careers/${slug}`, 0.7)
@@ -45,4 +49,4 @@ xml += '</urlset>\n'
 
 fs.writeFileSync(resolve(root, 'public', 'sitemap.xml'), xml, 'utf8')
 try { fs.writeFileSync(resolve(root, 'dist', 'sitemap.xml'), xml, 'utf8') } catch {}
-console.log(`Sitemap: ${11 + typeSlugs.length + blogSlugs.length + comparePairs.length + careerSlugs.length} URLs (${typeSlugs.length} types, ${blogSlugs.length} blog, ${comparePairs.length} comparisons, ${careerSlugs.length} careers)`)
+console.log(`Sitemap: ${11 + typeSlugs.length * 3 + blogSlugs.length + comparePairs.length + careerSlugs.length} URLs (${typeSlugs.length} types × 3 pages, ${blogSlugs.length} blog, ${comparePairs.length} comparisons, ${careerSlugs.length} careers)`)

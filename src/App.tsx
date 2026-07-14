@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 import Home from './pages/Home'
 import TypesPage from './pages/TypesPage'
 import TypeDetailPage from './pages/TypeDetailPage'
+import TypeCareersPage from './pages/TypeCareersPage'
+import TypeRelationshipsPage from './pages/TypeRelationshipsPage'
 import ComparePage from './pages/ComparePage'
 import CompareDetailPage from './pages/CompareDetailPage'
 import CareersPage from './pages/CareersPage'
@@ -203,6 +205,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/types" element={<TypesPage />} />
         <Route path="/types/:slug" element={<TypeDetailPage />} />
+        <Route path="/types/:slug/careers" element={<TypeCareersPage />} />
+        <Route path="/types/:slug/relationships" element={<TypeRelationshipsPage />} />
         <Route path="/compare" element={<ComparePage />} />
         <Route path="/compare/:a-vs-:b" element={<CompareDetailPage />} />
         <Route path="/careers" element={<CareersPage />} />

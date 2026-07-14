@@ -4,6 +4,8 @@ const STATIC_PAGES = new Set(['/', '/types', '/compare', '/careers', '/blog', '/
 function isValidRoute(pathname) {
   if (STATIC_PAGES.has(pathname)) return true;
   if (/^\/types\/[a-z0-9-]+$/.test(pathname)) return true;
+  if (/^\/types\/[a-z0-9-]+\/careers$/.test(pathname)) return true;
+  if (/^\/types\/[a-z0-9-]+\/relationships$/.test(pathname)) return true;
   if (/^\/blog\/[a-z0-9-]+$/.test(pathname)) return true;
   if (/^\/compare\/[a-z0-9-]+-vs-[a-z0-9-]+$/.test(pathname)) return true;
   if (/^\/careers\/[a-z0-9-]+$/.test(pathname)) return true;
