@@ -1,5 +1,5 @@
 // Valid route patterns for receipt.csskey.com
-const STATIC_PAGES = new Set(['/', '/types', '/compare', '/blog', '/about', '/privacy', '/terms', '/contact', '/disclaimer']);
+const STATIC_PAGES = new Set(['/', '/types', '/compare', '/blog', '/faq', '/about', '/privacy', '/terms', '/contact', '/disclaimer']);
 
 function isValidRoute(pathname) {
   if (STATIC_PAGES.has(pathname)) return true;

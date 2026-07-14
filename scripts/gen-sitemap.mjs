@@ -20,6 +20,7 @@ add('/', 1.0)
 add('/types', 0.9)
 add('/compare', 0.7)
 add('/blog', 0.8)
+add('/faq', 0.7)
 add('/about', 0.5)
 add('/privacy', 0.3)
 add('/terms', 0.3)
@@ -33,4 +34,4 @@ xml += '</urlset>\n'
 
 fs.writeFileSync(resolve(root, 'public', 'sitemap.xml'), xml, 'utf8')
 try { fs.writeFileSync(resolve(root, 'dist', 'sitemap.xml'), xml, 'utf8') } catch {}
-console.log(`Sitemap: ${9 + typeSlugs.length + blogSlugs.length} URLs (${typeSlugs.length} types, ${blogSlugs.length} blog)`)
+console.log(`Sitemap: ${10 + typeSlugs.length + blogSlugs.length} URLs (${typeSlugs.length} types, ${blogSlugs.length} blog)`)

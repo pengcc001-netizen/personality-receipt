@@ -7,6 +7,7 @@ import TypeDetailPage from './pages/TypeDetailPage'
 import ComparePage from './pages/ComparePage'
 import BlogIndex from './pages/BlogIndex'
 import BlogPost from './pages/BlogPost'
+import FAQPage from './pages/FAQPage'
 import StaticPage from './pages/StaticPage'
 import ResultPage from './pages/ResultPage'
 import Ad from './components/Ad'
@@ -201,6 +202,7 @@ export default function App() {
         <Route path="/compare" element={<ComparePage />} />
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/faq" element={<FAQPage />} />
         <Route path="/about" element={<StaticPage page="about" />} />
         <Route path="/privacy" element={<StaticPage page="privacy" />} />
         <Route path="/terms" element={<StaticPage page="terms" />} />
