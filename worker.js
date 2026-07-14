@@ -5,6 +5,7 @@ function isValidRoute(pathname) {
   if (STATIC_PAGES.has(pathname)) return true;
   if (/^\/types\/[a-z0-9-]+$/.test(pathname)) return true;
   if (/^\/blog\/[a-z0-9-]+$/.test(pathname)) return true;
+  if (/^\/compare\/[a-z0-9-]+-vs-[a-z0-9-]+$/.test(pathname)) return true;
   if (/^\/r\/[A-Za-z0-9_-]+$/.test(pathname)) return true;
   return false;
 }

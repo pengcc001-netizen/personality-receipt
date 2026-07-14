@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import TypesPage from './pages/TypesPage'
 import TypeDetailPage from './pages/TypeDetailPage'
 import ComparePage from './pages/ComparePage'
+import CompareDetailPage from './pages/CompareDetailPage'
 import BlogIndex from './pages/BlogIndex'
 import BlogPost from './pages/BlogPost'
 import FAQPage from './pages/FAQPage'
@@ -200,6 +201,7 @@ export default function App() {
         <Route path="/types" element={<TypesPage />} />
         <Route path="/types/:slug" element={<TypeDetailPage />} />
         <Route path="/compare" element={<ComparePage />} />
+        <Route path="/compare/:a-vs-:b" element={<CompareDetailPage />} />
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/faq" element={<FAQPage />} />

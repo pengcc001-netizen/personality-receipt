@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
 import { personalityTypes } from '../data/personalityTypes'
+import { typeComparisons } from '../data/typeComparisons'
 import Ad from '../components/Ad'
 
 export default function ComparePage() {
@@ -7,7 +9,7 @@ export default function ComparePage() {
     <div className="fade-in">
       <Helmet>
         <title>Compare Personality Types - Side by Side | Personality Receipt</title>
-        <meta name="description" content={`Compare all ${personalityTypes.length} personality types side by side. See receipt totals, strengths, weaknesses, and compatibility.`} />
+        <meta name="description" content={`Compare all ${personalityTypes.length} personality types side by side. See receipt totals, strengths, weaknesses, and ${typeComparisons.length} detailed compatibility analyses.`} />
       </Helmet>
 
       <div className="label" style={{ marginBottom: 8 }}>Comparison</div>
@@ -15,7 +17,7 @@ export default function ComparePage() {
         Compare All Types
       </h1>
       <p style={{ color: 'var(--ink-soft)', fontSize: 14, lineHeight: 1.7, maxWidth: 560, marginBottom: 32, fontFamily: 'var(--font-mono)' }}>
-        See how the {personalityTypes.length} personality types compare on receipt totals, strengths, and weaknesses.
+        See how the {personalityTypes.length} personality types compare on receipt totals, strengths, and weaknesses. Click any pair below for a deep compatibility analysis.
       </p>
 
       {/* Comparison table */}
@@ -33,8 +35,10 @@ export default function ComparePage() {
             {personalityTypes.map((t) => (
               <tr key={t.slug} style={{ borderBottom: '1px dashed var(--line-dashed)' }}>
                 <td style={{ padding: '10px 16px' }}>
-                  <span style={{ marginRight: 8 }}>{t.emoji}</span>
-                  <span style={{ color: 'var(--ink)', fontWeight: 600 }}>{t.name}</span>
+                  <Link to={`/types/${t.slug}`} style={{ textDecoration: 'none', color: 'var(--ink)' }}>
+                    <span style={{ marginRight: 8 }}>{t.emoji}</span>
+                    <span style={{ color: 'var(--ink)', fontWeight: 600 }}>{t.name}</span>
+                  </Link>
                 </td>
                 <td style={{ textAlign: 'right', padding: '10px 16px', color: 'var(--accent)', fontWeight: 700, fontVariantNumeric: 'tabular-nums' }}>
                   ${t.receiptTotal.toFixed(2)}
@@ -48,6 +52,38 @@ export default function ComparePage() {
       </div>
 
       <Ad />
+
+      {/* Pairwise comparisons */}
+      <section style={{ marginBottom: 40 }}>
+        <div className="label" style={{ marginBottom: 10 }}>Pairwise Compatibility Analysis ({typeComparisons.length} pairs)</div>
+        <p style={{ color: 'var(--ink-soft)', fontSize: 13, marginBottom: 20, fontFamily: 'var(--font-mono)' }}>
+          Click any pair for a deep analysis of how two types interact — complement, friction, communication tips, and real-world scenarios.
+        </p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 12 }}>
+          {typeComparisons.map((c, i) => {
+            const typeA = personalityTypes.find(t => t.slug === c.slugA)
+            const typeB = personalityTypes.find(t => t.slug === c.slugB)
+            if (!typeA || !typeB) return null
+            return (
+              <Link key={i} to={`/compare/${c.slugA}-vs-${c.slugB}`} style={{ textDecoration: 'none' }}>
+                <div className="paper-card" style={{ padding: '16px 20px', height: '100%' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+                    <span style={{ fontSize: '1.5rem' }}>{typeA.emoji}</span>
+                    <span className="mono" style={{ color: 'var(--accent)', fontSize: 14, fontWeight: 700 }}>×</span>
+                    <span style={{ fontSize: '1.5rem' }}>{typeB.emoji}</span>
+                  </div>
+                  <div style={{ fontSize: 13, color: 'var(--ink)', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>
+                    {typeA.name} × {typeB.name}
+                  </div>
+                  <div className="mono" style={{ fontSize: 11, color: 'var(--ink-faint)', marginTop: 4 }}>
+                    COMBINED: ${c.combinedTotal.toFixed(2)}
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      </section>
 
       {/* Ranked by total */}
       <section>

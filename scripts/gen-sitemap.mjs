@@ -13,6 +13,10 @@ const typeSlugs = [...typesData.matchAll(/slug: "([a-z0-9-]+)"/g)].map(m => m[1]
 const blogData = fs.readFileSync(resolve(root, 'src', 'data', 'blog.ts'), 'utf8')
 const blogSlugs = [...new Set([...blogData.matchAll(/slug: "([a-z0-9-]+)"/g)].map(m => m[1]))]
 
+// Read type comparisons
+const compareData = fs.readFileSync(resolve(root, 'src', 'data', 'typeComparisons.ts'), 'utf8')
+const comparePairs = [...compareData.matchAll(/slugA: "([a-z0-9-]+)"[\s\S]*?slugB: "([a-z0-9-]+)"/g)].map(m => `${m[1]}-vs-${m[2]}`)
+
 let xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 const add = (p, pri) => { xml += `  <url><loc>${base}${p}</loc><lastmod>${today}</lastmod><priority>${pri}</priority></url>\n` }
 
@@ -29,9 +33,10 @@ add('/disclaimer', 0.3)
 
 for (const slug of typeSlugs) add(`/types/${slug}`, 0.8)
 for (const slug of blogSlugs) add(`/blog/${slug}`, 0.7)
+for (const pair of comparePairs) add(`/compare/${pair}`, 0.6)
 
 xml += '</urlset>\n'
 
 fs.writeFileSync(resolve(root, 'public', 'sitemap.xml'), xml, 'utf8')
 try { fs.writeFileSync(resolve(root, 'dist', 'sitemap.xml'), xml, 'utf8') } catch {}
-console.log(`Sitemap: ${10 + typeSlugs.length + blogSlugs.length} URLs (${typeSlugs.length} types, ${blogSlugs.length} blog)`)
+console.log(`Sitemap: ${10 + typeSlugs.length + blogSlugs.length + comparePairs.length} URLs (${typeSlugs.length} types, ${blogSlugs.length} blog, ${comparePairs.length} comparisons)`)

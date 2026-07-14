@@ -4,6 +4,16 @@ export interface ReceiptItem {
   price: number;
 }
 
+export interface CareerFit {
+  title: string;
+  whyItFits: string;
+}
+
+export interface RelationshipDynamic {
+  partnerSlug: string;
+  dynamic: string;
+}
+
 export interface PersonalityType {
   slug: string;
   name: string;
@@ -16,6 +26,13 @@ export interface PersonalityType {
   weaknesses: string[];
   compatibleWith: string[];
   habits: string[];
+  deepAnalysis?: string;
+  careerAdvice?: string;
+  careerFits?: CareerFit[];
+  relationshipDynamics?: RelationshipDynamic[];
+  growthTips?: string[];
+  dailyLife?: string;
+  famousExamples?: string[];
 }
 
 export const personalityTypes: PersonalityType[] = [
@@ -39,6 +56,29 @@ export const personalityTypes: PersonalityType[] = [
     weaknesses: ["Decision paralysis", "Sleep deprivation", "Over-analyzes simple things", "Hard to let go"],
     compatibleWith: ["the-golden-retriever", "the-cozy-blanket", "the-spreadsheet"],
     habits: ["Re-reading sent messages", "Making pro/con lists at 2am", "Asking 'but what if' 47 times", "Googling things instead of sleeping"],
+    deepAnalysis: "The Overthinker is not anxious by accident. Your brain is a prediction engine that never shuts down, constantly modeling futures, weighing branches, calculating the probability that the silence on the other end of the text means something. This is cognitively expensive — research on rumination shows that chronic overthinking burns the same neural pathways as problem-solving, but without the resolution. You are running the computation without ever pressing enter.\n\nThe paradox of the Overthinker is that your analysis is usually correct. You do see outcomes others miss. You do catch the subtle shift in tone. The problem is not accuracy — it is cost. By the time you have verified that the text was fine, the moment has passed. Your intelligence operates at a latency that makes it invisible to others.\n\nThe 3am spiral is not random. Sleep research shows that the prefrontal cortex — the part that regulates emotional responses — goes offline during REM sleep. Without it, the amygdala runs unchecked, turning minor concerns into existential threats. You are not weaker at night. You are running the same analysis without the brakes.\n\nWhat looks like indecision is actually hyper-decision: you are making and unmaking the same choice dozens of times per minute. The exhaustion is real. The solution is not to think less but to think with a time limit — to externalize the analysis (write it down), set a deadline (decide by X), and accept that a good decision made on time beats a perfect decision made late.",
+    careerAdvice: "Your ability to see every angle is a superpower in roles where the cost of being wrong exceeds the cost of being slow. You thrive in analysis-heavy environments: research, risk assessment, strategy, editing, code review, legal analysis. The key is finding roles that reward thoroughness rather than speed. Avoid cultures that prize 'move fast and break things' — you will be miserable and they will call you a bottleneck.\n\nThe Overthinker's professional trap is perfectionism disguised as diligence. You will spend three hours on an email that needed twenty minutes. Learn to calibrate: not every decision deserves the same depth of analysis. Categorize decisions as reversible or irreversible, and spend your cognitive budget accordingly. Reversible decisions should be made fast. Irreversible decisions deserve the full treatment.\n\nYour best career move is to find a partner — a Golden Retriever or a Wildcard — who can pull the trigger while you provide the analysis. You are the navigator, not the driver, and that is not a lesser role. Navigators prevent ships from hitting rocks.",
+    careerFits: [
+      { title: "Data Analyst / Researcher", whyItFits: "Your natural tendency to question, verify, and explore edge cases is exactly what data analysis demands." },
+      { title: "Editor / Proofreader", whyItFits: "You already re-read every text three times. Getting paid to catch what others miss is just monetizing your habit." },
+      { title: "Risk Manager / Compliance", whyItFits: "You already model worst-case scenarios for free. In risk management, that paranoia is called 'due diligence' and it pays well." },
+      { title: "Therapist / Counselor", whyItFits: "You already analyze everyone's behavior. Channeling that into a professional, structured framework turns rumination into insight." },
+      { title: "Software Engineer (Backend)", whyItFits: "Code rewards careful thinking. The bugs you prevent by considering edge cases are worth more than the features a fast coder ships." },
+    ],
+    relationshipDynamics: [
+      { partnerSlug: "the-golden-retriever", dynamic: "The Golden Retriever pulls you out of your head. Their warmth is an antidote to your spirals, and your depth gives them something to lean on. The risk: you may overanalyze their simple affection, searching for hidden meanings that do not exist." },
+      { partnerSlug: "the-cozy-blanket", dynamic: "The Cozy Blanket gives you permission to rest. Their calm energy lowers your processing speed to something sustainable. The risk: together you may achieve so little comfort that nothing ever gets decided." },
+      { partnerSlug: "the-spreadsheet", dynamic: "The Spreadsheet validates your analytical nature. You both process the world through systems. The risk: two containers, no release valve. Someone needs to be willing to feel, out loud, eventually." },
+    ],
+    growthTips: [
+      "Set a timer for decisions. If it is reversible, decide in under 60 seconds. If it is not, decide within 24 hours.",
+      "Externalize the spiral. Write it down instead of thinking in circles — paper does not loop the way the mind does.",
+      "Distinguish between productive analysis and unproductive rumination. Productive analysis leads to a decision. Rumination leads to another question.",
+      "Practice the 70% rule: if you are 70% confident, act. Waiting for 100% is not thoroughness, it is fear wearing a disguise.",
+      "Tell someone when you are spiraling. Naming the loop out loud often breaks it. Silence feeds it.",
+    ],
+    dailyLife: "Your morning starts with a check of the phone — not to see what arrived, but to re-read what you sent last night, scanning for tone. You get coffee and think about whether the barista's 'have a nice day' was genuine or perfunctory. At work, you are the person who catches the edge case, the one who asks 'but what about when...' in the meeting. Colleagues are grateful and also slightly impatient. Lunch is spent replaying a conversation from 11am, deciding whether your tone was appropriate. The afternoon is productive but interrupted by periodic checks of whether you responded correctly to a Slack message. Evening is where the real processing begins. You lie in bed and your brain opens every file from the day, re-reading, re-evaluating. Sleep comes eventually, usually after you have Googled something inconsequential at 1am and fallen down a Wikipedia rabbit hole that has nothing to do with your original question.",
+    famousExamples: ["Riley from Inside Out", "Chidi Anagonye from The Good Place", "BoJack Horseman", "Alice from You've Got Mail"],
   },
   {
     slug: "the-golden-retriever",
