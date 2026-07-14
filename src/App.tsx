@@ -6,6 +6,8 @@ import TypesPage from './pages/TypesPage'
 import TypeDetailPage from './pages/TypeDetailPage'
 import ComparePage from './pages/ComparePage'
 import CompareDetailPage from './pages/CompareDetailPage'
+import CareersPage from './pages/CareersPage'
+import CareerDetailPage from './pages/CareerDetailPage'
 import BlogIndex from './pages/BlogIndex'
 import BlogPost from './pages/BlogPost'
 import FAQPage from './pages/FAQPage'
@@ -28,6 +30,7 @@ function NotFound() {
 const navLinks = [
   { to: '/types', label: 'Types' },
   { to: '/compare', label: 'Compare' },
+  { to: '/careers', label: 'Careers' },
   { to: '/blog', label: 'Blog' },
   { to: '/about', label: 'About' },
 ]
@@ -202,6 +205,8 @@ export default function App() {
         <Route path="/types/:slug" element={<TypeDetailPage />} />
         <Route path="/compare" element={<ComparePage />} />
         <Route path="/compare/:a-vs-:b" element={<CompareDetailPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/careers/:slug" element={<CareerDetailPage />} />
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/faq" element={<FAQPage />} />

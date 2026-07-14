@@ -1,11 +1,12 @@
 // Valid route patterns for receipt.csskey.com
-const STATIC_PAGES = new Set(['/', '/types', '/compare', '/blog', '/faq', '/about', '/privacy', '/terms', '/contact', '/disclaimer']);
+const STATIC_PAGES = new Set(['/', '/types', '/compare', '/careers', '/blog', '/faq', '/about', '/privacy', '/terms', '/contact', '/disclaimer']);
 
 function isValidRoute(pathname) {
   if (STATIC_PAGES.has(pathname)) return true;
   if (/^\/types\/[a-z0-9-]+$/.test(pathname)) return true;
   if (/^\/blog\/[a-z0-9-]+$/.test(pathname)) return true;
   if (/^\/compare\/[a-z0-9-]+-vs-[a-z0-9-]+$/.test(pathname)) return true;
+  if (/^\/careers\/[a-z0-9-]+$/.test(pathname)) return true;
   if (/^\/r\/[A-Za-z0-9_-]+$/.test(pathname)) return true;
   return false;
 }
