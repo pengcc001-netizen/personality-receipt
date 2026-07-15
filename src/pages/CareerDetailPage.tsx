@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async"
-import { useParams, Link, Navigate } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { careers } from "../data/careers"
 import { personalityTypes } from "../data/personalityTypes"
 import Ad from "../components/Ad"
@@ -8,7 +8,7 @@ import ShareButtons from "../components/ShareButtons"
 export default function CareerDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const career = careers.find((c) => c.slug === slug)
-  if (!career) return <Navigate to="/careers" replace />
+  if (!career) return <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}><Helmet><meta name="robots" content="noindex,nofollow" /></Helmet><h1 style={{ fontSize: 48, fontWeight: 800 }}>404</h1><p>Page not found</p><Link to="/" style={{ textDecoration: 'none', fontWeight: 600 }}>Go Home</Link></div>
 
   const url = `https://receipt.csskey.com/careers/${career.slug}`
 

@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async'
-import { useParams, Link, Navigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { personalityTypes } from '../data/personalityTypes'
 import Ad from '../components/Ad'
 import ShareButtons from '../components/ShareButtons'
@@ -8,7 +8,7 @@ export default function TypeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const type = personalityTypes.find(t => t.slug === slug)
 
-  if (!type) return <Navigate to="/types" replace />
+  if (!type) return <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}><Helmet><meta name="robots" content="noindex,nofollow" /></Helmet><h1 style={{ fontSize: 48, fontWeight: 800 }}>404</h1><p>Page not found</p><Link to="/" style={{ textDecoration: 'none', fontWeight: 600 }}>Go Home</Link></div>
 
   const url = `https://receipt.csskey.com/types/${type.slug}`
   const compatible = personalityTypes.filter(t => type.compatibleWith.includes(t.slug))

@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async"
-import { useParams, Link, Navigate } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { typeComparisons } from "../data/typeComparisons"
 import { personalityTypes } from "../data/personalityTypes"
 import ShareButtons from "../components/ShareButtons"
@@ -12,11 +12,11 @@ export default function CompareDetailPage() {
     (c) => (c.slugA === a && c.slugB === b) || (c.slugA === b && c.slugB === a),
   )
 
-  if (!comparison) return <Navigate to="/compare" replace />
+  if (!comparison) return <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}><Helmet><meta name="robots" content="noindex,nofollow" /></Helmet><h1 style={{ fontSize: 48, fontWeight: 800 }}>404</h1><p>Page not found</p><Link to="/" style={{ textDecoration: 'none', fontWeight: 600 }}>Go Home</Link></div>
 
   const typeA = personalityTypes.find((t) => t.slug === comparison.slugA)
   const typeB = personalityTypes.find((t) => t.slug === comparison.slugB)
-  if (!typeA || !typeB) return <Navigate to="/compare" replace />
+  if (!typeA || !typeB) return <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}><Helmet><meta name="robots" content="noindex,nofollow" /></Helmet><h1 style={{ fontSize: 48, fontWeight: 800 }}>404</h1><p>Page not found</p><Link to="/" style={{ textDecoration: 'none', fontWeight: 600 }}>Go Home</Link></div>
 
   const url = `https://receipt.csskey.com/compare/${comparison.slugA}-vs-${comparison.slugB}`
 
