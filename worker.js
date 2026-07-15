@@ -17,6 +17,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const path = url.pathname.replace(/\/+$/, '') || '/';
+    if (path !== url.pathname) return Response.redirect(url.origin + path, 301);
 
     let response = await env.ASSETS.fetch(request);
 
