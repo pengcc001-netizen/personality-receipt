@@ -146,7 +146,6 @@ export default function StaticPage({ page }: { page: string }) {
       <Helmet>
         <title>{info.title} - Personality Receipt</title>
         <meta name="description" content={`Personality Receipt ${info.title.toLowerCase()} page.`} />
-        <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content={`${info.title} - Personality Receipt`} />
         <meta property="og:description" content={`Personality Receipt ${info.title.toLowerCase()} page.`} />
         <meta property="og:url" content={canonicalUrl} />

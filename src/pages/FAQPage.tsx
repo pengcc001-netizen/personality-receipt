@@ -51,7 +51,6 @@ export default function FAQPage() {
       <Helmet>
         <title>FAQ - Frequently Asked Questions | Personality Receipt</title>
         <meta name="description" content="Answers to common questions about personality receipts, the quiz, how it works, privacy, and sharing. 10 questions answered." />
-        <link rel="canonical" href="https://receipt.csskey.com/faq" />
         <meta property="og:title" content="FAQ - Frequently Asked Questions | Personality Receipt" />
         <meta property="og:description" content="Answers to common questions about personality receipts, the quiz, how it works, privacy, and sharing. 10 questions answered." />
         <meta property="og:url" content="https://receipt.csskey.com/faq" />

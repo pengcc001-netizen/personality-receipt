@@ -9,7 +9,6 @@ export default function CareersPage() {
       <Helmet>
         <title>Career Guide by Personality Type - {careers.length} Careers | Personality Receipt</title>
         <meta name="description" content={`Find the right career for your personality type. ${careers.length} careers analyzed by personality compatibility, salary, daily reality, and growth path.`} />
-        <link rel="canonical" href="https://receipt.csskey.com/careers" />
         <meta property="og:title" content={`Career Guide by Personality Type - ${careers.length} Careers | Personality Receipt`} />
         <meta property="og:description" content={`Find the right career for your personality type. ${careers.length} careers analyzed by personality compatibility, salary, daily reality, and growth path.`} />
         <meta property="og:url" content="https://receipt.csskey.com/careers" />

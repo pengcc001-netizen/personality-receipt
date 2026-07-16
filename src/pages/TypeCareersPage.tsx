@@ -20,7 +20,6 @@ export default function TypeCareersPage() {
       <Helmet>
         <title>Best Careers for {type.name} - Career Guide | Personality Receipt</title>
         <meta name="description" content={`The best and worst careers for ${type.name}. See which jobs fit your personality type and why.`} />
-        <link rel="canonical" href={url} />
         <meta property="og:title" content={`Best Careers for ${type.name} - Career Guide | Personality Receipt`} />
         <meta property="og:description" content={`The best and worst careers for ${type.name}. See which jobs fit your personality type and why.`} />
         <meta property="og:url" content={url} />

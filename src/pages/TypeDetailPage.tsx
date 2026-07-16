@@ -18,7 +18,6 @@ export default function TypeDetailPage() {
       <Helmet>
         <title>{type.name} (${type.receiptTotal.toFixed(2)}) - Personality Receipt</title>
         <meta name="description" content={`${type.name}: ${type.tagline} Receipt total: $${type.receiptTotal.toFixed(2)}. Strengths, weaknesses, and habits.`} />
-        <link rel="canonical" href={url} />
         <meta property="og:title" content={`${type.name} (${type.receiptTotal.toFixed(2)}) - Personality Receipt`} />
         <meta property="og:description" content={`${type.name}: ${type.tagline} Receipt total: $${type.receiptTotal.toFixed(2)}. Strengths, weaknesses, and habits.`} />
         <meta property="og:url" content={url} />

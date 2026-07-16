@@ -10,7 +10,6 @@ export default function ComparePage() {
       <Helmet>
         <title>Compare Personality Types - Side by Side | Personality Receipt</title>
         <meta name="description" content={`Compare all ${personalityTypes.length} personality types side by side. See receipt totals, strengths, weaknesses, and ${typeComparisons.length} detailed compatibility analyses.`} />
-        <link rel="canonical" href="https://receipt.csskey.com/compare" />
         <meta property="og:title" content="Compare Personality Types - Side by Side | Personality Receipt" />
         <meta property="og:description" content={`Compare all ${personalityTypes.length} personality types side by side. See receipt totals, strengths, weaknesses, and ${typeComparisons.length} detailed compatibility analyses.`} />
         <meta property="og:url" content="https://receipt.csskey.com/compare" />

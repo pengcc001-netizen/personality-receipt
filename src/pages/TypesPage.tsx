@@ -9,7 +9,6 @@ export default function TypesPage() {
       <Helmet>
         <title>All {personalityTypes.length} Personality Types - Personality Receipt</title>
         <meta name="description" content={`Browse all ${personalityTypes.length} personality types. From The Overthinker to The Wildcard. Each type comes with a receipt showing the cost of being that person.`} />
-        <link rel="canonical" href="https://receipt.csskey.com/types" />
         <meta property="og:title" content={`All ${personalityTypes.length} Personality Types - Personality Receipt`} />
         <meta property="og:description" content={`Browse all ${personalityTypes.length} personality types. From The Overthinker to The Wildcard. Each type comes with a receipt showing the cost of being that person.`} />
         <meta property="og:url" content="https://receipt.csskey.com/types" />

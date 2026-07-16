@@ -28,7 +28,6 @@ export default function CompareDetailPage() {
           name="description"
           content={`How do ${typeA.name} and ${typeB.name} interact? Deep analysis of compatibility, friction, communication tips, and real-world scenarios.`}
         />
-        <link rel="canonical" href={url} />
         <meta property="og:title" content={`${typeA.name} × ${typeB.name} - Type Compatibility Analysis | Personality Receipt`} />
         <meta property="og:description" content={`How do ${typeA.name} and ${typeB.name} interact? Deep analysis of compatibility, friction, communication tips, and real-world scenarios.`} />
         <meta property="og:url" content={url} />
