@@ -11,7 +11,7 @@ export default function BlogIndex() {
         <meta name="description" content={`Articles about personality types, receipt format psychology, and internet culture. ${blogPosts.length} guides covering personality tests, MBTI comparison, and self-improvement.`} />
       </Helmet>
 
-      <div className="label" style={{ marginBottom: 8 }}>Blog</div>
+      <h2 className="label" style={{ marginBottom: 8 }}>Blog</h2>
       <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', fontWeight: 700, marginBottom: 16 }}>
         Articles & Guides
       </h1>

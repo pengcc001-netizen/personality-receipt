@@ -11,7 +11,7 @@ export default function TypesPage() {
         <meta name="description" content={`Browse all ${personalityTypes.length} personality types. From The Overthinker to The Wildcard. Each type comes with a receipt showing the cost of being that person.`} />
       </Helmet>
 
-      <div className="label" style={{ marginBottom: 8 }}>Personality Types</div>
+      <h2 className="label" style={{ marginBottom: 8 }}>Personality Types</h2>
       <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', fontWeight: 700, marginBottom: 16 }}>
         All {personalityTypes.length} Types
       </h1>
@@ -37,7 +37,7 @@ export default function TypesPage() {
                   </div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div className="label" style={{ marginBottom: 4 }}>Receipt Total</div>
+                  <h2 className="label" style={{ marginBottom: 4 }}>Receipt Total</h2>
                   <div className="mono nums" style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--accent)' }}>${type.receiptTotal.toFixed(2)}</div>
                 </div>
               </div>

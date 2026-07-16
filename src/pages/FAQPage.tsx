@@ -62,7 +62,7 @@ export default function FAQPage() {
         })}</script>
       </Helmet>
 
-      <div className="label" style={{ marginBottom: 8 }}>Frequently Asked</div>
+      <h2 className="label" style={{ marginBottom: 8 }}>Frequently Asked</h2>
       <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', fontWeight: 700, marginBottom: 16, fontFamily: 'var(--font-mono)' }}>
         Questions & Answers
       </h1>

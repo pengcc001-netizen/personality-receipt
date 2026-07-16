@@ -58,7 +58,7 @@ export default function Home() {
 
         {/* Hero */}
         <section style={{ textAlign: 'center', padding: '20px 0 48px' }}>
-          <div className="label" style={{ marginBottom: 16 }}>Personality Test · Receipt Format</div>
+          <h2 className="label" style={{ marginBottom: 16 }}>Personality Test · Receipt Format</h2>
           <h1 style={{
             fontSize: 'clamp(2.5rem, 6vw, 4rem)',
             fontWeight: 700,
@@ -116,7 +116,7 @@ export default function Home() {
 
         {/* Types preview */}
         <section>
-          <div className="label" style={{ marginBottom: 8 }}>8 Personality Types</div>
+          <h2 className="label" style={{ marginBottom: 8 }}>8 Personality Types</h2>
           <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 1.75rem)', marginBottom: 24 }}>Which One Are You?</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 12 }}>
             {personalityTypes.map(t => (
@@ -296,7 +296,7 @@ export default function Home() {
           {/* Strengths/weaknesses summary */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, margin: '16px 0' }}>
             <div>
-              <div className="label" style={{ color: 'var(--highlight)', marginBottom: 8 }}>Strengths</div>
+              <h2 className="label" style={{ color: 'var(--highlight)', marginBottom: 8 }}>Strengths</h2>
               {type.strengths.map((s, i) => (
                 <div key={i} className="mono" style={{ fontSize: 12, color: 'var(--ink-soft)', padding: '2px 0' }}>
                   + {s}
@@ -304,7 +304,7 @@ export default function Home() {
               ))}
             </div>
             <div>
-              <div className="label" style={{ color: 'var(--accent)', marginBottom: 8 }}>Weaknesses</div>
+              <h2 className="label" style={{ color: 'var(--accent)', marginBottom: 8 }}>Weaknesses</h2>
               {type.weaknesses.map((w, i) => (
                 <div key={i} className="mono" style={{ fontSize: 12, color: 'var(--ink-soft)', padding: '2px 0' }}>
                   − {w}
@@ -331,7 +331,7 @@ export default function Home() {
 
         {/* Share */}
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
-          <div className="label" style={{ marginBottom: 12 }}>Share Your Receipt</div>
+          <h2 className="label" style={{ marginBottom: 12 }}>Share Your Receipt</h2>
           <ShareButtons url={shareUrl} title={`I'm ${type.name}! My personality receipt total: $${type.receiptTotal.toFixed(2)}. Take yours:`} />
         </div>
 
@@ -344,7 +344,7 @@ export default function Home() {
 
         {/* Explore */}
         <div style={{ textAlign: 'center' }}>
-          <div className="label" style={{ marginBottom: 12 }}>Explore More</div>
+          <h2 className="label" style={{ marginBottom: 12 }}>Explore More</h2>
           <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/types" className="btn btn-outline" style={{ fontSize: 11 }}>All 8 Types</Link>
             <Link to="/compare" className="btn btn-outline" style={{ fontSize: 11 }}>Compare Types</Link>

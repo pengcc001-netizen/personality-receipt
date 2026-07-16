@@ -50,7 +50,7 @@ export default function TypeCareersPage() {
       </div>
 
       <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-        <div className="label" style={{ color: "var(--highlight)", marginBottom: 16 }}>✓ {bestCareers.length} Careers Where You Thrive</div>
+        <h2 className="label" style={{ color: "var(--highlight)", marginBottom: 16 }}>✓ {bestCareers.length} Careers Where You Thrive</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {bestCareers.map((career) => {
             const match = career.bestTypes.find((bt) => bt.slug === type.slug)
@@ -74,7 +74,7 @@ export default function TypeCareersPage() {
 
       {worstCareers.length > 0 && (
         <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-          <div className="label" style={{ color: "var(--accent)", marginBottom: 16 }}>✗ {worstCareers.length} Careers That May Drain You</div>
+          <h2 className="label" style={{ color: "var(--accent)", marginBottom: 16 }}>✗ {worstCareers.length} Careers That May Drain You</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {worstCareers.map((career) => {
               const match = career.worstTypes.find((wt) => wt.slug === type.slug)
@@ -96,7 +96,7 @@ export default function TypeCareersPage() {
 
       {neutralCareers.length > 0 && (
         <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-          <div className="label" style={{ marginBottom: 16 }}>○ Also Consider</div>
+          <h2 className="label" style={{ marginBottom: 16 }}>○ Also Consider</h2>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {neutralCareers.map((career) => (
               <Link key={career.slug} to={`/careers/${career.slug}`} style={{ textDecoration: "none" }}>

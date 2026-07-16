@@ -53,13 +53,13 @@ export default function CareerDetailPage() {
 
       {/* Description */}
       <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-        <div className="label" style={{ marginBottom: 8 }}>Overview</div>
+        <h2 className="label" style={{ marginBottom: 8 }}>Overview</h2>
         <p style={{ fontSize: 15, lineHeight: 1.8, color: "var(--ink)", fontFamily: "var(--font-body)" }}>{career.description}</p>
       </div>
 
       {/* Best types */}
       <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-        <div className="label" style={{ color: "var(--highlight)", marginBottom: 16 }}>✓ Best Personality Types for This Career</div>
+        <h2 className="label" style={{ color: "var(--highlight)", marginBottom: 16 }}>✓ Best Personality Types for This Career</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           {career.bestTypes.map((bt, i) => {
             const type = personalityTypes.find((t) => t.slug === bt.slug)
@@ -83,7 +83,7 @@ export default function CareerDetailPage() {
 
       {/* Worst types */}
       <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-        <div className="label" style={{ color: "var(--accent)", marginBottom: 16 }}>✗ Types That May Struggle</div>
+        <h2 className="label" style={{ color: "var(--accent)", marginBottom: 16 }}>✗ Types That May Struggle</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           {career.worstTypes.map((wt, i) => {
             const type = personalityTypes.find((t) => t.slug === wt.slug)
@@ -109,19 +109,19 @@ export default function CareerDetailPage() {
 
       {/* Daily reality */}
       <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-        <div className="label" style={{ marginBottom: 8 }}>Daily Reality</div>
+        <h2 className="label" style={{ marginBottom: 8 }}>Daily Reality</h2>
         <p style={{ fontSize: 15, lineHeight: 1.8, color: "var(--ink)", fontFamily: "var(--font-body)" }}>{career.dailyReality}</p>
       </div>
 
       {/* Growth path */}
       <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-        <div className="label" style={{ marginBottom: 8 }}>Growth Path</div>
+        <h2 className="label" style={{ marginBottom: 8 }}>Growth Path</h2>
         <p style={{ fontSize: 15, lineHeight: 1.8, color: "var(--ink)", fontFamily: "var(--font-body)" }}>{career.growthPath}</p>
       </div>
 
       {/* Skills */}
       <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-        <div className="label" style={{ marginBottom: 12 }}>Key Skills</div>
+        <h2 className="label" style={{ marginBottom: 12 }}>Key Skills</h2>
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           {career.skills.map((s, i) => (
             <span key={i} className="stamp-chip">{s}</span>

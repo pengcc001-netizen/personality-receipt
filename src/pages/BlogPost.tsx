@@ -85,7 +85,7 @@ export default function BlogPost() {
 
       {related.length > 0 && (
         <section>
-          <div className="label" style={{ marginBottom: 10 }}>Keep Reading</div>
+          <h2 className="label" style={{ marginBottom: 10 }}>Keep Reading</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {related.map(p => (
               <Link key={p.slug} to={`/blog/${p.slug}`} style={{ textDecoration: 'none' }}>

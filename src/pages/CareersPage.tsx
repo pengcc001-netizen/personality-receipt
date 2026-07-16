@@ -11,7 +11,7 @@ export default function CareersPage() {
         <meta name="description" content={`Find the right career for your personality type. ${careers.length} careers analyzed by personality compatibility, salary, daily reality, and growth path.`} />
       </Helmet>
 
-      <div className="label" style={{ marginBottom: 8 }}>Career Guide</div>
+      <h2 className="label" style={{ marginBottom: 8 }}>Career Guide</h2>
       <h1 style={{ fontSize: "clamp(1.75rem, 4vw, 2.25rem)", fontWeight: 700, marginBottom: 16, fontFamily: "var(--font-mono)" }}>
         Careers by Personality Type
       </h1>

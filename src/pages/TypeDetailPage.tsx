@@ -83,7 +83,7 @@ export default function TypeDetailPage() {
 
       {/* Description */}
       <article className="prose" style={{ marginBottom: 32 }}>
-        <div className="label" style={{ marginBottom: 12 }}>About This Type</div>
+        <h2 className="label" style={{ marginBottom: 12 }}>About This Type</h2>
         {type.description.split('\n').map((para, i) => (
           <p key={i} className={i === 0 ? 'dropcap' : ''} style={{
             fontSize: 15, lineHeight: 1.8, color: 'var(--ink)', margin: '8px 0',
@@ -95,7 +95,7 @@ export default function TypeDetailPage() {
       {/* Strengths & Weaknesses */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
         <div className="paper-card" style={{ padding: '20px 24px' }}>
-          <div className="label" style={{ color: 'var(--highlight)', marginBottom: 10 }}>Strengths</div>
+          <h2 className="label" style={{ color: 'var(--highlight)', marginBottom: 10 }}>Strengths</h2>
           {type.strengths.map((s, i) => (
             <div key={i} className="mono" style={{ fontSize: 13, color: 'var(--ink)', padding: '3px 0' }}>
               <span style={{ color: 'var(--highlight)' }}>+</span> {s}
@@ -103,7 +103,7 @@ export default function TypeDetailPage() {
           ))}
         </div>
         <div className="paper-card" style={{ padding: '20px 24px' }}>
-          <div className="label" style={{ color: 'var(--accent)', marginBottom: 10 }}>Weaknesses</div>
+          <h2 className="label" style={{ color: 'var(--accent)', marginBottom: 10 }}>Weaknesses</h2>
           {type.weaknesses.map((w, i) => (
             <div key={i} className="mono" style={{ fontSize: 13, color: 'var(--ink)', padding: '3px 0' }}>
               <span style={{ color: 'var(--accent)' }}>−</span> {w}
@@ -114,7 +114,7 @@ export default function TypeDetailPage() {
 
       {/* Habits */}
       <div className="paper-card" style={{ padding: '20px 24px', marginBottom: 32 }}>
-        <div className="label" style={{ marginBottom: 10 }}>Typical Habits</div>
+        <h2 className="label" style={{ marginBottom: 10 }}>Typical Habits</h2>
         <ul style={{ listStyle: 'none', padding: 0 }}>
           {type.habits.map((h, i) => (
             <li key={i} className="mono" style={{ fontSize: 13, color: 'var(--ink-soft)', padding: '4px 0', paddingLeft: 16, position: 'relative' }}>
@@ -130,7 +130,7 @@ export default function TypeDetailPage() {
       {/* Compatible types */}
       {compatible.length > 0 && (
         <section style={{ marginBottom: 32 }}>
-          <div className="label" style={{ marginBottom: 10 }}>Most Compatible With</div>
+          <h2 className="label" style={{ marginBottom: 10 }}>Most Compatible With</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {compatible.map(p => (
               <Link key={p.slug} to={`/types/${p.slug}`} style={{ textDecoration: 'none' }}>
