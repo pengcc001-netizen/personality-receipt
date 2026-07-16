@@ -9,6 +9,19 @@ export default function BlogIndex() {
       <Helmet>
         <title>Blog - Personality & Psychology Guides | Personality Receipt</title>
         <meta name="description" content={`Articles about personality types, receipt format psychology, and internet culture. ${blogPosts.length} guides covering personality tests, MBTI comparison, and self-improvement.`} />
+        <link rel="canonical" href="https://receipt.csskey.com/blog" />
+        <meta property="og:title" content="Blog - Personality & Psychology Guides | Personality Receipt" />
+        <meta property="og:description" content={`Articles about personality types, receipt format psychology, and internet culture. ${blogPosts.length} guides covering personality tests, MBTI comparison, and self-improvement.`} />
+        <meta property="og:url" content="https://receipt.csskey.com/blog" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Blog - Personality & Psychology Guides",
+          "description": `Articles about personality types, receipt format psychology, and internet culture. ${blogPosts.length} guides covering personality tests, MBTI comparison, and self-improvement.`,
+          "url": "https://receipt.csskey.com/blog"
+        })}</script>
       </Helmet>
 
       <h2 className="label" style={{ marginBottom: 8 }}>Blog</h2>

@@ -10,6 +10,19 @@ export default function ComparePage() {
       <Helmet>
         <title>Compare Personality Types - Side by Side | Personality Receipt</title>
         <meta name="description" content={`Compare all ${personalityTypes.length} personality types side by side. See receipt totals, strengths, weaknesses, and ${typeComparisons.length} detailed compatibility analyses.`} />
+        <link rel="canonical" href="https://receipt.csskey.com/compare" />
+        <meta property="og:title" content="Compare Personality Types - Side by Side | Personality Receipt" />
+        <meta property="og:description" content={`Compare all ${personalityTypes.length} personality types side by side. See receipt totals, strengths, weaknesses, and ${typeComparisons.length} detailed compatibility analyses.`} />
+        <meta property="og:url" content="https://receipt.csskey.com/compare" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Compare Personality Types",
+          "description": `Compare all ${personalityTypes.length} personality types side by side. See receipt totals, strengths, weaknesses, and ${typeComparisons.length} detailed compatibility analyses.`,
+          "url": "https://receipt.csskey.com/compare"
+        })}</script>
       </Helmet>
 
       <h2 className="label" style={{ marginBottom: 8 }}>Comparison</h2>

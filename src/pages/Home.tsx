@@ -44,6 +44,12 @@ export default function Home() {
         <Helmet>
           <title>Personality Receipt - What Type of Person Are You? [2026]</title>
           <meta name="description" content="Take a personality test and get your result as a receipt. 8 brutally honest personality types. Free, no sign-up. Share your personality receipt." />
+          <link rel="canonical" href="https://receipt.csskey.com/" />
+          <meta property="og:title" content="Personality Receipt - Your Personality, Itemized" />
+          <meta property="og:description" content="Get your personality receipt. 8 types, 30+ careers, relationship dynamics, and more." />
+          <meta property="og:url" content="https://receipt.csskey.com/" />
+          <meta property="og:type" content="website" />
+          <meta name="twitter:card" content="summary" />
           <script type="application/ld+json">{JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebApplication",

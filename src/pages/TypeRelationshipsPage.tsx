@@ -18,6 +18,12 @@ export default function TypeRelationshipsPage() {
       <Helmet>
         <title>{type.name} in Relationships - Compatibility Guide | Personality Receipt</title>
         <meta name="description" content={`How does ${type.name} interact with every other personality type? See ${comparisons.length} compatibility analyses with complement, friction, and communication tips.`} />
+        <link rel="canonical" href={url} />
+        <meta property="og:title" content={`${type.name} in Relationships - Compatibility Guide | Personality Receipt`} />
+        <meta property="og:description" content={`How does ${type.name} interact with every other personality type? See ${comparisons.length} compatibility analyses with complement, friction, and communication tips.`} />
+        <meta property="og:url" content={url} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

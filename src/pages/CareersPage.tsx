@@ -9,6 +9,19 @@ export default function CareersPage() {
       <Helmet>
         <title>Career Guide by Personality Type - {careers.length} Careers | Personality Receipt</title>
         <meta name="description" content={`Find the right career for your personality type. ${careers.length} careers analyzed by personality compatibility, salary, daily reality, and growth path.`} />
+        <link rel="canonical" href="https://receipt.csskey.com/careers" />
+        <meta property="og:title" content={`Career Guide by Personality Type - ${careers.length} Careers | Personality Receipt`} />
+        <meta property="og:description" content={`Find the right career for your personality type. ${careers.length} careers analyzed by personality compatibility, salary, daily reality, and growth path.`} />
+        <meta property="og:url" content="https://receipt.csskey.com/careers" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Career Guide by Personality Type",
+          "description": `Find the right career for your personality type. ${careers.length} careers analyzed by personality compatibility, salary, daily reality, and growth path.`,
+          "url": "https://receipt.csskey.com/careers"
+        })}</script>
       </Helmet>
 
       <h2 className="label" style={{ marginBottom: 8 }}>Career Guide</h2>

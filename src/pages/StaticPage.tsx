@@ -128,11 +128,27 @@ export default function StaticPage({ page }: { page: string }) {
 
   let isFirstParagraph = true
 
+  const canonicalPath = page === 'terms' ? 'legal-terms' : page
+  const canonicalUrl = `https://receipt.csskey.com/${canonicalPath}`
+
   return (
     <div className="fade-in">
       <Helmet>
         <title>{info.title} - Personality Receipt</title>
         <meta name="description" content={`Personality Receipt ${info.title.toLowerCase()} page.`} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={`${info.title} - Personality Receipt`} />
+        <meta property="og:description" content={`Personality Receipt ${info.title.toLowerCase()} page.`} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": `${info.title} - Personality Receipt`,
+          "description": `Personality Receipt ${info.title.toLowerCase()} page.`,
+          "url": canonicalUrl
+        })}</script>
       </Helmet>
 
       <article>

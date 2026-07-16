@@ -9,6 +9,19 @@ export default function TypesPage() {
       <Helmet>
         <title>All {personalityTypes.length} Personality Types - Personality Receipt</title>
         <meta name="description" content={`Browse all ${personalityTypes.length} personality types. From The Overthinker to The Wildcard. Each type comes with a receipt showing the cost of being that person.`} />
+        <link rel="canonical" href="https://receipt.csskey.com/types" />
+        <meta property="og:title" content={`All ${personalityTypes.length} Personality Types - Personality Receipt`} />
+        <meta property="og:description" content={`Browse all ${personalityTypes.length} personality types. From The Overthinker to The Wildcard. Each type comes with a receipt showing the cost of being that person.`} />
+        <meta property="og:url" content="https://receipt.csskey.com/types" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": `All ${personalityTypes.length} Personality Types`,
+          "description": `Browse all ${personalityTypes.length} personality types. From The Overthinker to The Wildcard. Each type comes with a receipt showing the cost of being that person.`,
+          "url": "https://receipt.csskey.com/types"
+        })}</script>
       </Helmet>
 
       <h2 className="label" style={{ marginBottom: 8 }}>Personality Types</h2>

@@ -17,6 +17,12 @@ export default function CareerDetailPage() {
       <Helmet>
         <title>{career.title} - Career Guide by Personality Type | Personality Receipt</title>
         <meta name="description" content={`Is ${career.title} right for your personality type? Salary: ${career.salary}. See which types thrive and which struggle in this career.`} />
+        <link rel="canonical" href={url} />
+        <meta property="og:title" content={`${career.title} - Career Guide by Personality Type | Personality Receipt`} />
+        <meta property="og:description" content={`Is ${career.title} right for your personality type? Salary: ${career.salary}. See which types thrive and which struggle in this career.`} />
+        <meta property="og:url" content={url} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
