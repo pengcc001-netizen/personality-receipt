@@ -53,7 +53,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "WebApplication",
             "name": "Personality Receipt",
-            "url": "https://receipt.csskey.com",
+            "url": "https://receipt.csskey.com/",
             "applicationCategory": "EntertainmentApplication",
             "operatingSystem": "Any",
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
