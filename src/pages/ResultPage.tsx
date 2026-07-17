@@ -45,6 +45,13 @@ export default function ResultPage() {
       <Helmet>
         <title>{type.name} - Personality Receipt (${type.receiptTotal.toFixed(2)})</title>
         <meta name="robots" content="noindex,nofollow" />
+        <meta property="og:title" content={`My Personality Receipt: ${type.name} ($${type.receiptTotal.toFixed(2)})`} />
+        <meta property="og:description" content={type.tagline} />
+        <meta property="og:url" content={shareUrl} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`My Personality Receipt: ${type.name}`} />
+        <meta name="twitter:description" content={type.tagline} />
       </Helmet>
 
       {/* The Receipt */}
