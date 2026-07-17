@@ -47,6 +47,15 @@ export default function CompareDetailPage() {
             mainEntityOfPage: url,
           })}
         </script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://receipt.csskey.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Compare", "item": "https://receipt.csskey.com/compare" },
+            { "@type": "ListItem", "position": 3, "name": `${typeA.name} vs ${typeB.name}`, "item": url }
+          ]
+        })}</script>
       </Helmet>
 
       <div style={{ marginBottom: 24 }}>
