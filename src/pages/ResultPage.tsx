@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useParams, Link } from 'react-router-dom'
 import { quizQuestions } from '../data/questions'
@@ -30,7 +30,7 @@ export default function ResultPage() {
   if (!typeSlug) {
     return (
       <div style={{ textAlign: 'center', padding: '60px 0' }}>
-        <Helmet><meta name="robots" content="noindex,nofollow" /></Helmet>
+        <Helmet><meta name="robots" content="noindex,nofollow" /><title>404 - Not Found | Personality Receipt</title></Helmet>
         <p className="mono" style={{ color: 'var(--ink-soft)' }}>Invalid receipt link.</p>
         <Link to="/" className="btn btn-stamp" style={{ marginTop: 16 }}>Take the Test</Link>
       </div>
@@ -96,7 +96,7 @@ export default function ResultPage() {
       <Ad />
 
       <div style={{ textAlign: 'center', marginBottom: 32 }}>
-        <Link to="/" className="btn btn-stamp">Get Your Own Receipt →</Link>
+        <Link to="/" className="btn btn-stamp">Get Your Own Receipt 鈫?/Link>
       </div>
     </div>
   )

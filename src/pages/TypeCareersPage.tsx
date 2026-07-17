@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async"
+﻿import { Helmet } from "react-helmet-async"
 import { useParams, Link } from "react-router-dom"
 import { personalityTypes } from "../data/personalityTypes"
 import { careers } from "../data/careers"
@@ -7,7 +7,7 @@ import Ad from "../components/Ad"
 export default function TypeCareersPage() {
   const { slug } = useParams<{ slug: string }>()
   const type = personalityTypes.find((t) => t.slug === slug)
-  if (!type) return <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}><Helmet><meta name="robots" content="noindex,nofollow" /></Helmet><h1 style={{ fontSize: 48, fontWeight: 800 }}>404</h1><p>Page not found</p><Link to="/" style={{ textDecoration: 'none', fontWeight: 600 }}>Go Home</Link></div>
+  if (!type) return <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}><Helmet><meta name="robots" content="noindex,nofollow" /><title>404 - Not Found | Personality Receipt</title></Helmet><h1 style={{ fontSize: 48, fontWeight: 800 }}>404</h1><p>Page not found</p><Link to="/" style={{ textDecoration: 'none', fontWeight: 600 }}>Go Home</Link></div>
 
   const bestCareers = careers.filter((c) => c.bestTypes.some((bt) => bt.slug === type.slug))
   const worstCareers = careers.filter((c) => c.worstTypes.some((wt) => wt.slug === type.slug))
@@ -42,7 +42,7 @@ export default function TypeCareersPage() {
 
       <div style={{ marginBottom: 24 }}>
         <Link to={`/types/${type.slug}`} style={{ color: "var(--ink-faint)", fontSize: 12, fontFamily: "var(--font-mono)" }}>
-          ← {type.emoji} {type.name}
+          鈫?{type.emoji} {type.name}
         </Link>
       </div>
 
@@ -55,7 +55,7 @@ export default function TypeCareersPage() {
       </div>
 
       <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-        <h2 className="label" style={{ color: "var(--highlight)", marginBottom: 16 }}>✓ {bestCareers.length} Careers Where You Thrive</h2>
+        <h2 className="label" style={{ color: "var(--highlight)", marginBottom: 16 }}>鉁?{bestCareers.length} Careers Where You Thrive</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {bestCareers.map((career) => {
             const match = career.bestTypes.find((bt) => bt.slug === type.slug)
@@ -79,7 +79,7 @@ export default function TypeCareersPage() {
 
       {worstCareers.length > 0 && (
         <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-          <h2 className="label" style={{ color: "var(--accent)", marginBottom: 16 }}>✗ {worstCareers.length} Careers That May Drain You</h2>
+          <h2 className="label" style={{ color: "var(--accent)", marginBottom: 16 }}>鉁?{worstCareers.length} Careers That May Drain You</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {worstCareers.map((career) => {
               const match = career.worstTypes.find((wt) => wt.slug === type.slug)
@@ -101,7 +101,7 @@ export default function TypeCareersPage() {
 
       {neutralCareers.length > 0 && (
         <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-          <h2 className="label" style={{ marginBottom: 16 }}>○ Also Consider</h2>
+          <h2 className="label" style={{ marginBottom: 16 }}>鈼?Also Consider</h2>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {neutralCareers.map((career) => (
               <Link key={career.slug} to={`/careers/${career.slug}`} style={{ textDecoration: "none" }}>
@@ -113,7 +113,7 @@ export default function TypeCareersPage() {
       )}
 
       <div style={{ display: "flex", gap: 12, justifyContent: "center" }}>
-        <Link to={`/types/${type.slug}/relationships`} className="btn btn-outline" style={{ fontSize: 12 }}>View Relationship Dynamics →</Link>
+        <Link to={`/types/${type.slug}/relationships`} className="btn btn-outline" style={{ fontSize: 12 }}>View Relationship Dynamics 鈫?/Link>
         <Link to="/careers" className="btn btn-outline" style={{ fontSize: 12 }}>All Careers</Link>
       </div>
     </div>

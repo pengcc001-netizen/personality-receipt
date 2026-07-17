@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async'
+﻿import { Helmet } from 'react-helmet-async'
 import { useParams, Link } from 'react-router-dom'
 import { personalityTypes } from '../data/personalityTypes'
 import Ad from '../components/Ad'
@@ -8,7 +8,7 @@ export default function TypeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const type = personalityTypes.find(t => t.slug === slug)
 
-  if (!type) return <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}><Helmet><meta name="robots" content="noindex,nofollow" /></Helmet><h1 style={{ fontSize: 48, fontWeight: 800 }}>404</h1><p>Page not found</p><Link to="/" style={{ textDecoration: 'none', fontWeight: 600 }}>Go Home</Link></div>
+  if (!type) return <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}><Helmet><meta name="robots" content="noindex,nofollow" /><title>404 - Not Found | Personality Receipt</title></Helmet><h1 style={{ fontSize: 48, fontWeight: 800 }}>404</h1><p>Page not found</p><Link to="/" style={{ textDecoration: 'none', fontWeight: 600 }}>Go Home</Link></div>
 
   const url = `https://receipt.csskey.com/types/${type.slug}`
   const compatible = personalityTypes.filter(t => type.compatibleWith.includes(t.slug))
@@ -26,7 +26,7 @@ export default function TypeDetailPage() {
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": `${type.name} — Personality Receipt`,
+          "headline": `${type.name} 鈥?Personality Receipt`,
           "description": type.tagline,
           "url": url,
           "author": { "@type": "Person", "name": "Maya Chen" },
@@ -37,7 +37,7 @@ export default function TypeDetailPage() {
       </Helmet>
 
       <div style={{ marginBottom: 20 }}>
-        <Link to="/types" className="mono" style={{ color: 'var(--ink-faint)', fontSize: 12 }}>← All Types</Link>
+        <Link to="/types" className="mono" style={{ color: 'var(--ink-faint)', fontSize: 12 }}>鈫?All Types</Link>
       </div>
 
       {/* The Receipt */}
@@ -111,7 +111,7 @@ export default function TypeDetailPage() {
           <h2 className="label" style={{ color: 'var(--accent)', marginBottom: 10 }}>Weaknesses</h2>
           {type.weaknesses.map((w, i) => (
             <div key={i} className="mono" style={{ fontSize: 13, color: 'var(--ink)', padding: '3px 0' }}>
-              <span style={{ color: 'var(--accent)' }}>−</span> {w}
+              <span style={{ color: 'var(--accent)' }}>鈭?/span> {w}
             </div>
           ))}
         </div>
@@ -123,7 +123,7 @@ export default function TypeDetailPage() {
         <ul style={{ listStyle: 'none', padding: 0 }}>
           {type.habits.map((h, i) => (
             <li key={i} className="mono" style={{ fontSize: 13, color: 'var(--ink-soft)', padding: '4px 0', paddingLeft: 16, position: 'relative' }}>
-              <span style={{ position: 'absolute', left: 0, color: 'var(--accent)' }}>·</span>
+              <span style={{ position: 'absolute', left: 0, color: 'var(--accent)' }}>路</span>
               {h}
             </li>
           ))}
@@ -150,14 +150,14 @@ export default function TypeDetailPage() {
       )}
 
       <div style={{ marginTop: 32, display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-        <Link to={`/types/${type.slug}/careers`} className="btn btn-stamp" style={{ fontSize: 14 }}>Career Fit →</Link>
-        <Link to={`/types/${type.slug}/relationships`} className="btn btn-stamp" style={{ fontSize: 14 }}>Relationships →</Link>
-        <ShareButtons url={url} title={`${type.name} — $${type.receiptTotal.toFixed(2)} receipt total`} />
+        <Link to={`/types/${type.slug}/careers`} className="btn btn-stamp" style={{ fontSize: 14 }}>Career Fit 鈫?/Link>
+        <Link to={`/types/${type.slug}/relationships`} className="btn btn-stamp" style={{ fontSize: 14 }}>Relationships 鈫?/Link>
+        <ShareButtons url={url} title={`${type.name} 鈥?$${type.receiptTotal.toFixed(2)} receipt total`} />
       </div>
 
       {/* Take test */}
       <div style={{ textAlign: 'center', marginTop: 32 }}>
-        <Link to="/" className="btn btn-stamp">Take the Test →</Link>
+        <Link to="/" className="btn btn-stamp">Take the Test 鈫?/Link>
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async'
+﻿import { Helmet } from 'react-helmet-async'
 import { useParams, Link } from 'react-router-dom'
 import { blogPosts } from '../data/blog'
 import ShareButtons from '../components/ShareButtons'
@@ -8,7 +8,7 @@ export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>()
   const post = blogPosts.find(p => p.slug === slug)
 
-  if (!post) return <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}><Helmet><meta name="robots" content="noindex,nofollow" /></Helmet><h1 style={{ fontSize: 48, fontWeight: 800 }}>404</h1><p>Page not found</p><Link to="/" style={{ textDecoration: 'none', fontWeight: 600 }}>Go Home</Link></div>
+  if (!post) return <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}><Helmet><meta name="robots" content="noindex,nofollow" /><title>404 - Not Found | Personality Receipt</title></Helmet><h1 style={{ fontSize: 48, fontWeight: 800 }}>404</h1><p>Page not found</p><Link to="/" style={{ textDecoration: 'none', fontWeight: 600 }}>Go Home</Link></div>
 
   const url = `https://receipt.csskey.com/blog/${post.slug}`
   const related = blogPosts.filter(p => p.slug !== post.slug).slice(0, 3)
@@ -38,13 +38,13 @@ export default function BlogPost() {
       </Helmet>
 
       <div style={{ marginBottom: 20 }}>
-        <Link to="/blog" className="mono" style={{ color: 'var(--ink-faint)', fontSize: 12 }}>← All Articles</Link>
+        <Link to="/blog" className="mono" style={{ color: 'var(--ink-faint)', fontSize: 12 }}>鈫?All Articles</Link>
       </div>
 
       <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
         <span className="chip chip-accent">{post.category}</span>
         <span className="mono" style={{ fontSize: 10, color: 'var(--ink-faint)', alignSelf: 'center', letterSpacing: '0.05em' }}>
-          {post.date} · BY {post.author.toUpperCase()}
+          {post.date} 路 BY {post.author.toUpperCase()}
         </span>
       </div>
 

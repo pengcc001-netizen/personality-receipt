@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async"
+﻿import { Helmet } from "react-helmet-async"
 import { useParams, Link } from "react-router-dom"
 import { careers } from "../data/careers"
 import { personalityTypes } from "../data/personalityTypes"
@@ -8,7 +8,7 @@ import ShareButtons from "../components/ShareButtons"
 export default function CareerDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const career = careers.find((c) => c.slug === slug)
-  if (!career) return <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}><Helmet><meta name="robots" content="noindex,nofollow" /></Helmet><h1 style={{ fontSize: 48, fontWeight: 800 }}>404</h1><p>Page not found</p><Link to="/" style={{ textDecoration: 'none', fontWeight: 600 }}>Go Home</Link></div>
+  if (!career) return <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}><Helmet><meta name="robots" content="noindex,nofollow" /><title>404 - Not Found | Personality Receipt</title></Helmet><h1 style={{ fontSize: 48, fontWeight: 800 }}>404</h1><p>Page not found</p><Link to="/" style={{ textDecoration: 'none', fontWeight: 600 }}>Go Home</Link></div>
 
   const url = `https://receipt.csskey.com/careers/${career.slug}`
 
@@ -26,7 +26,7 @@ export default function CareerDetailPage() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: `${career.title} — Career Guide by Personality Type`,
+            headline: `${career.title} 鈥?Career Guide by Personality Type`,
             description: career.description,
             url: url,
             author: { "@type": "Person", name: "Dr. Emily Hart" },
@@ -40,7 +40,7 @@ export default function CareerDetailPage() {
 
       <div style={{ marginBottom: 24 }}>
         <Link to="/careers" style={{ color: "var(--ink-faint)", fontSize: 12, fontFamily: "var(--font-mono)" }}>
-          ← All Careers
+          鈫?All Careers
         </Link>
       </div>
 
@@ -64,7 +64,7 @@ export default function CareerDetailPage() {
 
       {/* Best types */}
       <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-        <h2 className="label" style={{ color: "var(--highlight)", marginBottom: 16 }}>✓ Best Personality Types for This Career</h2>
+        <h2 className="label" style={{ color: "var(--highlight)", marginBottom: 16 }}>鉁?Best Personality Types for This Career</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           {career.bestTypes.map((bt, i) => {
             const type = personalityTypes.find((t) => t.slug === bt.slug)
@@ -88,7 +88,7 @@ export default function CareerDetailPage() {
 
       {/* Worst types */}
       <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-        <h2 className="label" style={{ color: "var(--accent)", marginBottom: 16 }}>✗ Types That May Struggle</h2>
+        <h2 className="label" style={{ color: "var(--accent)", marginBottom: 16 }}>鉁?Types That May Struggle</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           {career.worstTypes.map((wt, i) => {
             const type = personalityTypes.find((t) => t.slug === wt.slug)
@@ -135,11 +135,11 @@ export default function CareerDetailPage() {
       </div>
 
       <div style={{ marginBottom: 32 }}>
-        <ShareButtons url={url} title={`${career.title} — Career Guide by Personality Type`} />
+        <ShareButtons url={url} title={`${career.title} 鈥?Career Guide by Personality Type`} />
       </div>
 
       <div style={{ textAlign: "center" }}>
-        <Link to="/careers" className="btn btn-outline" style={{ fontSize: 12 }}>← All Career Guides</Link>
+        <Link to="/careers" className="btn btn-outline" style={{ fontSize: 12 }}>鈫?All Career Guides</Link>
       </div>
     </div>
   )
