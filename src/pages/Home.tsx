@@ -24,7 +24,7 @@ export default function Home() {
       // Count type occurrences
       const counts: Record<string, number> = {}
       newAnswers.forEach(slug => { counts[slug] = (counts[slug] || 0) + 1 })
-      const encoded = btoa(newAnswers.join(','))
+      const encoded = btoa(newAnswers.join(',')).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
       window.history.replaceState(null, '', `/r/${encoded}`)
       setPhase('result')
     }
