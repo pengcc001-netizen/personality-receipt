@@ -149,7 +149,9 @@ export default function TypeDetailPage() {
         </section>
       )}
 
-      <div style={{ marginTop: 32 }}>
+      <div style={{ marginTop: 32, display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+        <Link to={`/types/${type.slug}/careers`} className="btn btn-stamp" style={{ fontSize: 14 }}>Career Fit →</Link>
+        <Link to={`/types/${type.slug}/relationships`} className="btn btn-stamp" style={{ fontSize: 14 }}>Relationships →</Link>
         <ShareButtons url={url} title={`${type.name} — $${type.receiptTotal.toFixed(2)} receipt total`} />
       </div>
 
