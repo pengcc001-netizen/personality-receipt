@@ -111,7 +111,7 @@ export default function TypeCareersPage() {
 
       {neutralCareers.length > 0 && (
         <div className="paper-card" style={{ padding: "24px 28px", marginBottom: 24 }}>
-          <h2 className="label" style={{ marginBottom: 16 }}>鈼?Also Consider</h2>
+          <h2 className="label" style={{ marginBottom: 16 }}>■Also Consider</h2>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {neutralCareers.map((career) => (
               <Link key={career.slug} to={`/careers/${career.slug}`} style={{ textDecoration: "none" }}>
@@ -123,7 +123,7 @@ export default function TypeCareersPage() {
       )}
 
       <div style={{ display: "flex", gap: 12, justifyContent: "center" }}>
-        <Link to={`/types/${type.slug}/relationships`} className="btn btn-outline" style={{ fontSize: 12 }}>View Relationship Dynamics →/Link>
+        <Link to={`/types/${type.slug}/relationships`} className="btn btn-outline" style={{ fontSize: 12 }}>View Relationship Dynamics →</Link>
         <Link to="/careers" className="btn btn-outline" style={{ fontSize: 12 }}>All Careers</Link>
       </div>
     </div>

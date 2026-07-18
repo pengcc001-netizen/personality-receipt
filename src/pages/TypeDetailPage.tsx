@@ -62,7 +62,7 @@ export default function TypeDetailPage() {
 
         <div style={{ textAlign: 'center', margin: '16px 0' }}>
           <div style={{ fontSize: '3rem', marginBottom: 8 }}>{type.emoji}</div>
-          <div className="mono" style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--ink)' }}>{type.name}</div>
+          <h1 className="mono" style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--ink)' }}>{type.name}</h1>
           <div className="hand" style={{ fontSize: 18, color: 'var(--accent)', marginTop: 4 }}>{type.tagline}</div>
         </div>
 
@@ -120,7 +120,7 @@ export default function TypeDetailPage() {
           <h2 className="label" style={{ color: 'var(--accent)', marginBottom: 10 }}>Weaknesses</h2>
           {type.weaknesses.map((w, i) => (
             <div key={i} className="mono" style={{ fontSize: 13, color: 'var(--ink)', padding: '3px 0' }}>
-              <span style={{ color: 'var(--accent)' }}>−/span> {w}
+              <span style={{ color: 'var(--accent)' }}>−</span> {w}
             </div>
           ))}
         </div>
@@ -159,14 +159,14 @@ export default function TypeDetailPage() {
       )}
 
       <div style={{ marginTop: 32, display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-        <Link to={`/types/${type.slug}/careers`} className="btn btn-stamp" style={{ fontSize: 14 }}>Career Fit →/Link>
-        <Link to={`/types/${type.slug}/relationships`} className="btn btn-stamp" style={{ fontSize: 14 }}>Relationships →/Link>
+        <Link to={`/types/${type.slug}/careers`} className="btn btn-stamp" style={{ fontSize: 14 }}>Career Fit →</Link>
+        <Link to={`/types/${type.slug}/relationships`} className="btn btn-stamp" style={{ fontSize: 14 }}>Relationships →</Link>
         <ShareButtons url={url} title={`${type.name} —$${type.receiptTotal.toFixed(2)} receipt total`} />
       </div>
 
       {/* Take test */}
       <div style={{ textAlign: 'center', marginTop: 32 }}>
-        <Link to="/" className="btn btn-stamp">Take the Test →/Link>
+        <Link to="/" className="btn btn-stamp">Take the Test →</Link>
       </div>
     </div>
   )

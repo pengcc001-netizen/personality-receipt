@@ -103,7 +103,7 @@ export default function ResultPage() {
       <Ad />
 
       <div style={{ textAlign: 'center', marginBottom: 32 }}>
-        <Link to="/" className="btn btn-stamp">Get Your Own Receipt →/Link>
+        <Link to="/" className="btn btn-stamp">Get Your Own Receipt →</Link>
       </div>
     </div>
   )

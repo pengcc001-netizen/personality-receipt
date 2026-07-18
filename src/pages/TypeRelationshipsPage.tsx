@@ -93,7 +93,7 @@ export default function TypeRelationshipsPage() {
       <Ad />
 
       <div style={{ display: "flex", gap: 12, justifyContent: "center" }}>
-        <Link to={`/types/${type.slug}/careers`} className="btn btn-outline" style={{ fontSize: 12 }}>View Career Guide →/Link>
+        <Link to={`/types/${type.slug}/careers`} className="btn btn-outline" style={{ fontSize: 12 }}>View Career Guide →</Link>
         <Link to="/compare" className="btn btn-outline" style={{ fontSize: 12 }}>All Comparisons</Link>
       </div>
     </div>
