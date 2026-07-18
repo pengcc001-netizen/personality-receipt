@@ -23,7 +23,7 @@ export default function CareersPage() {
         })}</script>
       </Helmet>
 
-      <h2 className="label" style={{ marginBottom: 8 }}>Career Guide</h2>
+      <div className="label" $$$ >$$$</div>
       <h1 style={{ fontSize: "clamp(1.75rem, 4vw, 2.25rem)", fontWeight: 700, marginBottom: 16, fontFamily: "var(--font-mono)" }}>
         Careers by Personality Type
       </h1>

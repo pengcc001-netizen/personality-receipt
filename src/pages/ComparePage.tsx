@@ -24,7 +24,7 @@ export default function ComparePage() {
         })}</script>
       </Helmet>
 
-      <h2 className="label" style={{ marginBottom: 8 }}>Comparison</h2>
+      <div className="label" $$$ >$$$</div>
       <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', fontWeight: 700, marginBottom: 16 }}>
         Compare All Types
       </h1>
@@ -67,7 +67,7 @@ export default function ComparePage() {
 
       {/* Pairwise comparisons */}
       <section style={{ marginBottom: 40 }}>
-        <h2 className="label" style={{ marginBottom: 10 }}>Pairwise Compatibility Analysis ({typeComparisons.length} pairs)</h2>
+        <div className="label" $$$ >$$$</div>
         <p style={{ color: 'var(--ink-soft)', fontSize: 13, marginBottom: 20, fontFamily: 'var(--font-mono)' }}>
           Click any pair for a deep analysis of how two types interact — complement, friction, communication tips, and real-world scenarios.
         </p>
@@ -99,7 +99,7 @@ export default function ComparePage() {
 
       {/* Ranked by total */}
       <section>
-        <h2 className="label" style={{ marginBottom: 10 }}>Ranked by Receipt Total (Highest Cost)</h2>
+        <div className="label" $$$ >$$$</div>
         <div className="paper-card" style={{ padding: '8px 20px' }}>
           {[...personalityTypes].sort((a, b) => b.receiptTotal - a.receiptTotal).map((t, i) => (
             <div key={t.slug} className="receipt-line" style={{ padding: '8px 0' }}>
