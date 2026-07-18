@@ -1,4 +1,4 @@
-﻿import { Helmet } from "react-helmet-async"
+import { Helmet } from "react-helmet-async"
 import { useParams, Link } from "react-router-dom"
 import { personalityTypes } from "../data/personalityTypes"
 import { typeComparisons } from "../data/typeComparisons"
@@ -50,7 +50,7 @@ export default function TypeRelationshipsPage() {
 
       <div style={{ marginBottom: 24 }}>
         <Link to={`/types/${type.slug}`} style={{ color: "var(--ink-faint)", fontSize: 12, fontFamily: "var(--font-mono)" }}>
-          鈫?{type.emoji} {type.name}
+          →{type.emoji} {type.name}
         </Link>
       </div>
 
@@ -75,11 +75,11 @@ export default function TypeRelationshipsPage() {
               <div className="paper-card" style={{ padding: "20px 24px", height: "100%" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                   <span style={{ fontSize: "1.5rem" }}>{type.emoji}</span>
-                  <span className="mono" style={{ color: "var(--accent)", fontSize: 14, fontWeight: 700 }}>脳</span>
+                  <span className="mono" style={{ color: "var(--accent)", fontSize: 14, fontWeight: 700 }}>×</span>
                   <span style={{ fontSize: "1.5rem" }}>{otherType.emoji}</span>
                 </div>
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 700, color: "var(--ink)", marginBottom: 4 }}>
-                  脳 {otherType.name}
+                  × {otherType.name}
                 </div>
                 <div className="mono" style={{ fontSize: 11, color: "var(--ink-faint)" }}>
                   COMBINED: ${c.combinedTotal.toFixed(2)}
@@ -93,7 +93,7 @@ export default function TypeRelationshipsPage() {
       <Ad />
 
       <div style={{ display: "flex", gap: 12, justifyContent: "center" }}>
-        <Link to={`/types/${type.slug}/careers`} className="btn btn-outline" style={{ fontSize: 12 }}>View Career Guide 鈫?/Link>
+        <Link to={`/types/${type.slug}/careers`} className="btn btn-outline" style={{ fontSize: 12 }}>View Career Guide →/Link>
         <Link to="/compare" className="btn btn-outline" style={{ fontSize: 12 }}>All Comparisons</Link>
       </div>
     </div>

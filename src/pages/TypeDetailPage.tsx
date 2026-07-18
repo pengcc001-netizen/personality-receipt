@@ -1,4 +1,4 @@
-﻿import { Helmet } from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async'
 import { useParams, Link } from 'react-router-dom'
 import { personalityTypes } from '../data/personalityTypes'
 import Ad from '../components/Ad'
@@ -26,7 +26,7 @@ export default function TypeDetailPage() {
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": `${type.name} 鈥?Personality Receipt`,
+          "headline": `${type.name} —Personality Receipt`,
           "description": type.tagline,
           "url": url,
           "author": { "@type": "Person", "name": "Maya Chen" },
@@ -46,7 +46,7 @@ export default function TypeDetailPage() {
       </Helmet>
 
       <div style={{ marginBottom: 20 }}>
-        <Link to="/types" className="mono" style={{ color: 'var(--ink-faint)', fontSize: 12 }}>鈫?All Types</Link>
+        <Link to="/types" className="mono" style={{ color: 'var(--ink-faint)', fontSize: 12 }}>→All Types</Link>
       </div>
 
       {/* The Receipt */}
@@ -120,7 +120,7 @@ export default function TypeDetailPage() {
           <h2 className="label" style={{ color: 'var(--accent)', marginBottom: 10 }}>Weaknesses</h2>
           {type.weaknesses.map((w, i) => (
             <div key={i} className="mono" style={{ fontSize: 13, color: 'var(--ink)', padding: '3px 0' }}>
-              <span style={{ color: 'var(--accent)' }}>鈭?/span> {w}
+              <span style={{ color: 'var(--accent)' }}>−/span> {w}
             </div>
           ))}
         </div>
@@ -132,7 +132,7 @@ export default function TypeDetailPage() {
         <ul style={{ listStyle: 'none', padding: 0 }}>
           {type.habits.map((h, i) => (
             <li key={i} className="mono" style={{ fontSize: 13, color: 'var(--ink-soft)', padding: '4px 0', paddingLeft: 16, position: 'relative' }}>
-              <span style={{ position: 'absolute', left: 0, color: 'var(--accent)' }}>路</span>
+              <span style={{ position: 'absolute', left: 0, color: 'var(--accent)' }}>·</span>
               {h}
             </li>
           ))}
@@ -159,14 +159,14 @@ export default function TypeDetailPage() {
       )}
 
       <div style={{ marginTop: 32, display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-        <Link to={`/types/${type.slug}/careers`} className="btn btn-stamp" style={{ fontSize: 14 }}>Career Fit 鈫?/Link>
-        <Link to={`/types/${type.slug}/relationships`} className="btn btn-stamp" style={{ fontSize: 14 }}>Relationships 鈫?/Link>
-        <ShareButtons url={url} title={`${type.name} 鈥?$${type.receiptTotal.toFixed(2)} receipt total`} />
+        <Link to={`/types/${type.slug}/careers`} className="btn btn-stamp" style={{ fontSize: 14 }}>Career Fit →/Link>
+        <Link to={`/types/${type.slug}/relationships`} className="btn btn-stamp" style={{ fontSize: 14 }}>Relationships →/Link>
+        <ShareButtons url={url} title={`${type.name} —$${type.receiptTotal.toFixed(2)} receipt total`} />
       </div>
 
       {/* Take test */}
       <div style={{ textAlign: 'center', marginTop: 32 }}>
-        <Link to="/" className="btn btn-stamp">Take the Test 鈫?/Link>
+        <Link to="/" className="btn btn-stamp">Take the Test →/Link>
       </div>
     </div>
   )

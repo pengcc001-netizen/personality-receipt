@@ -1,4 +1,4 @@
-﻿import { Helmet } from "react-helmet-async"
+import { Helmet } from "react-helmet-async"
 import { useParams, Link } from "react-router-dom"
 import { typeComparisons } from "../data/typeComparisons"
 import { personalityTypes } from "../data/personalityTypes"
@@ -23,12 +23,12 @@ export default function CompareDetailPage() {
   return (
     <div className="fade-in" style={{ maxWidth: 720, margin: "0 auto" }}>
       <Helmet>
-        <title>{typeA.name} 脳 {typeB.name} - Type Compatibility Analysis | Personality Receipt</title>
+        <title>{typeA.name} × {typeB.name} - Type Compatibility Analysis | Personality Receipt</title>
         <meta
           name="description"
           content={`How do ${typeA.name} and ${typeB.name} interact? Deep analysis of compatibility, friction, communication tips, and real-world scenarios.`}
         />
-        <meta property="og:title" content={`${typeA.name} 脳 ${typeB.name} - Type Compatibility Analysis | Personality Receipt`} />
+        <meta property="og:title" content={`${typeA.name} × ${typeB.name} - Type Compatibility Analysis | Personality Receipt`} />
         <meta property="og:description" content={`How do ${typeA.name} and ${typeB.name} interact? Deep analysis of compatibility, friction, communication tips, and real-world scenarios.`} />
         <meta property="og:url" content={url} />
         <meta property="og:type" content="website" />
@@ -37,7 +37,7 @@ export default function CompareDetailPage() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: `${typeA.name} 脳 ${typeB.name} 鈥?Type Compatibility Analysis`,
+            headline: `${typeA.name} × ${typeB.name} —Type Compatibility Analysis`,
             description: `Deep analysis of how ${typeA.name} and ${typeB.name} interact.`,
             url: url,
             author: { "@type": "Person", name: "Dr. Emily Hart" },
@@ -60,11 +60,11 @@ export default function CompareDetailPage() {
 
       <div style={{ marginBottom: 24 }}>
         <Link to="/compare" style={{ color: "var(--ink-faint)", fontSize: 12, fontFamily: "var(--font-mono)" }}>
-          鈫?All Comparisons
+          →All Comparisons
         </Link>
       </div>
 
-      <h1 style={{ position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0 }}>{typeA.name} 脳 {typeB.name} Compatibility Analysis</h1>
+      <h1 style={{ position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0 }}>{typeA.name} × {typeB.name} Compatibility Analysis</h1>
 
       {/* Header */}
       <div style={{ textAlign: "center", marginBottom: 40 }}>
@@ -73,7 +73,7 @@ export default function CompareDetailPage() {
             <div style={{ fontSize: "3rem", marginBottom: 8 }}>{typeA.emoji}</div>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 16, fontWeight: 700, color: "var(--ink)" }}>{typeA.name}</div>
           </div>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: 24, color: "var(--ink-red)", fontWeight: 700 }}>脳</div>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: 24, color: "var(--ink-red)", fontWeight: 700 }}>×</div>
           <div style={{ textAlign: "center" }}>
             <div style={{ fontSize: "3rem", marginBottom: 8 }}>{typeB.emoji}</div>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 16, fontWeight: 700, color: "var(--ink)" }}>{typeB.name}</div>
@@ -162,7 +162,7 @@ export default function CompareDetailPage() {
       </section>
 
       <div style={{ marginBottom: 32 }}>
-        <ShareButtons url={url} title={`${typeA.name} 脳 ${typeB.name} compatibility analysis`} />
+        <ShareButtons url={url} title={`${typeA.name} × ${typeB.name} compatibility analysis`} />
       </div>
 
       {/* Links to individual types */}

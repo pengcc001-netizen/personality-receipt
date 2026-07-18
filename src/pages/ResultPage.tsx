@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useParams, Link } from 'react-router-dom'
 import { quizQuestions } from '../data/questions'
@@ -103,7 +103,7 @@ export default function ResultPage() {
       <Ad />
 
       <div style={{ textAlign: 'center', marginBottom: 32 }}>
-        <Link to="/" className="btn btn-stamp">Get Your Own Receipt 鈫?/Link>
+        <Link to="/" className="btn btn-stamp">Get Your Own Receipt →/Link>
       </div>
     </div>
   )
