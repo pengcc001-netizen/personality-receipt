@@ -65,7 +65,7 @@ export default function ResultPage() {
 
         <div style={{ textAlign: 'center', margin: '16px 0' }}>
           <div style={{ fontSize: '3rem', marginBottom: 8 }}>{type.emoji}</div>
-          <div className="mono" style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--ink)' }}>{type.name}</div>
+          <h1 className="mono" style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--ink)', margin: 0 }}>{type.name}</h1>
           <div className="hand" style={{ fontSize: 18, color: 'var(--accent)', marginTop: 4 }}>{type.tagline}</div>
         </div>
 
