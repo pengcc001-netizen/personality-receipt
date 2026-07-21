@@ -1,0 +1,27 @@
+# Personality Receipt
+
+> Free personality test and receipt generator for fun self-assessment and discovery.
+
+## Main Pages
+- [Home](https://receipt.csskey.com/)
+- [About](https://receipt.csskey.com/about)
+- [Privacy Policy](https://receipt.csskey.com/privacy)
+- [Terms of Service](https://receipt.csskey.com/terms)
+- [Contact](https://receipt.csskey.com/contact)
+
+## Features
+- Personality quiz
+- Receipt generation
+- Trait analysis
+- Fun results
+- Shareable output
+
+## Topics
+- personality test
+- self-assessment
+- personality traits
+- fun quiz
+- psychology
+
+## Sitemap
+https://receipt.csskey.com/sitemap.xml
