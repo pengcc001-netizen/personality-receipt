@@ -132,7 +132,6 @@ export default function TypeDetailPage() {
         <ul style={{ listStyle: 'none', padding: 0 }}>
           {type.habits.map((h, i) => (
             <li key={i} className="mono" style={{ fontSize: 13, color: 'var(--ink-soft)', padding: '4px 0', paddingLeft: 16, position: 'relative' }}>
-              <span style={{ position: 'absolute', left: 0, color: 'var(--accent)' }}>·</span>
               {h}
             </li>
           ))}
