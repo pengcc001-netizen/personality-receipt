@@ -167,7 +167,14 @@ export default function Home() {
             </span>
           </div>
           <div style={{ height: 3, background: 'var(--bg-shade)', border: '1px solid var(--line)' }}>
-            </div>
+            <div style={{
+              height: '100%',
+              width: `${progress}%`,
+              background: 'var(--accent)',
+              transition: 'width 0.3s ease',
+            }} />
+          </div>
+        </div>
 
         {/* Question */}
         <h2 className="mono" style={{
